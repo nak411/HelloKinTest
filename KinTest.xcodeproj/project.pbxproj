@@ -12,6 +12,7 @@
 		06556FE42303A80500739C7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06556FE22303A80500739C7C /* Main.storyboard */; };
 		06556FE62303A80600739C7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06556FE52303A80600739C7C /* Assets.xcassets */; };
 		06556FE92303A80600739C7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06556FE72303A80600739C7C /* LaunchScreen.storyboard */; };
+		C5F10F263F2739615FE5C982 /* Pods_KinTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFB9BA19A454B79EED26859C /* Pods_KinTest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		06556FE52303A80600739C7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06556FE82303A80600739C7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06556FEA2303A80600739C7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1426053AB5508788721A972C /* Pods-KinTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinTest.debug.xcconfig"; path = "Target Support Files/Pods-KinTest/Pods-KinTest.debug.xcconfig"; sourceTree = "<group>"; };
+		AB72E08D221158865853CEEB /* Pods-KinTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KinTest.release.xcconfig"; path = "Target Support Files/Pods-KinTest/Pods-KinTest.release.xcconfig"; sourceTree = "<group>"; };
+		DFB9BA19A454B79EED26859C /* Pods_KinTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KinTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F10F263F2739615FE5C982 /* Pods_KinTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				06556FDD2303A80500739C7C /* KinTest */,
 				06556FDC2303A80500739C7C /* Products */,
+				543172A5F15514FD25EC886C /* Pods */,
+				7F2EF620D7B5F857304935AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,24 @@
 			path = KinTest;
 			sourceTree = "<group>";
 		};
+		543172A5F15514FD25EC886C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1426053AB5508788721A972C /* Pods-KinTest.debug.xcconfig */,
+				AB72E08D221158865853CEEB /* Pods-KinTest.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7F2EF620D7B5F857304935AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DFB9BA19A454B79EED26859C /* Pods_KinTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +96,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 06556FED2303A80600739C7C /* Build configuration list for PBXNativeTarget "KinTest" */;
 			buildPhases = (
+				3542D4CB3B4F35C3838D072A /* [CP] Check Pods Manifest.lock */,
 				06556FD72303A80500739C7C /* Sources */,
 				06556FD82303A80500739C7C /* Frameworks */,
 				06556FD92303A80500739C7C /* Resources */,
+				D1ECCEBFB0D0B46C02C64506 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +156,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3542D4CB3B4F35C3838D072A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KinTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1ECCEBFB0D0B46C02C64506 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KinTest/Pods-KinTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KinTest/Pods-KinTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KinTest/Pods-KinTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		06556FD72303A80500739C7C /* Sources */ = {
@@ -280,10 +349,13 @@
 		};
 		06556FEE2303A80600739C7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1426053AB5508788721A972C /* Pods-KinTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D29Q847B5;
 				INFOPLIST_FILE = KinTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -291,16 +363,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = naveed.com.KinTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		06556FEF2303A80600739C7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB72E08D221158865853CEEB /* Pods-KinTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2D29Q847B5;
 				INFOPLIST_FILE = KinTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,7 +383,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = naveed.com.KinTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
